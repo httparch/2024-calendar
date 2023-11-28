@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap');
 *{
     margin: 0;
     padding: 0;
@@ -18,6 +19,7 @@
     margin: auto;
     border-radius: 10px 10px 10px 10px;
     border: 3px solid #000000;
+    padding: 10px;
 }
 
 body{
@@ -36,17 +38,26 @@ nav p{
     display: flex;
     align-items: center;
     margin-right: 10px;
-    padding: 30px;
+    padding-left: 10px;
     text-decoration: none;
+    padding-top: 70px;
+    font-weight: 600;
+    /* font-size: revert-layer; */
 }
 
 nav h1{
     flex-grow: 5;
     justify-content: end;
-    font-size: 300%;
-    margin: 50px 30px;
-    padding-left: 100px;
-    font-weight: 500; 
+    font-size: 500%;
+    margin-top: 50px;
+    margin-left: 30px;
+    padding-left: 30px;
+    padding-top: 20px;
+}
+
+.icon {
+    display: flex;
+    align-items: center;
 }
 
 .mid-section{
@@ -73,31 +84,40 @@ div .row{
 }
 
 .current-day{
-    font-size: 80px;
+    font-size: 67px;
+    font-weight: 700;
 }
 
 ul{
-    background-color: #6e6d6d;
+    background-color: #D9D9D9;
     margin-left: 60px;
     margin-bottom: 100px;
-    border-radius: 10px 10px 10px 10px;
 }
 
 img{
-    height: 50%;
+    height: 100px;
 }
 
 .row li{
-    background-color: #f1f1f1;
+    background-color: #ffffff;
     width: 100px;
     margin: 10px;
     text-align: center;
     line-height: 75px;
-    font-size: 20px;
+    font-size: 17px;
 }
 
 .right{
     display: flex;
     flex-direction: column;
     margin-left: 40px ;
+}
+
+.todo p{
+    margin-top: 30px;
+    padding-left: 30px;
+}
+
+ol li{
+    padding: 10px 0 0 80px;
 }

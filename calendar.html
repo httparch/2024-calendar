@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="calendar.css">
+    <link rel="stylesheet" href="@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap');">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
     <title>2024 Calendar</title>
 </head>
@@ -14,15 +15,15 @@
         <header class="header">    
             
             <div>
+                 
                 <nav>
-                    <h1>2024</h1>  
+                    <h1>2024</h1> 
+
                     <p>TODAY</p>
                     <p>|</p>
                     <p>DECEMBER</p>
-                    <div>
-                        <p href=""></p>
+                    <div class="icon">
                         <p id="next" class="material-symbols-rounded">chevron_right</p>
-                        <p href=""></p>
                     </div>
                     
                 </nav>
@@ -74,9 +75,13 @@
                         
                     </div>
                 </div>
-                    <div class="todo">
-                        <p>to do:</p>
-                    </div>
+                <div class="todo">
+                    <p>to do:</p>
+                    <ol class="orderedlist">
+                        <li class="list">[]</li>
+                        <li class="list">[]</li>
+                    </ol>
+                </div>
             </div>
 
         </div>
