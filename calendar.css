@@ -29,7 +29,7 @@
 }
 
 .background{
-    background-image: url('seasonal-bg/bkg_09_september.jpg');
+    /* background-image: url('seasonal-bg/bkg_09_september.jpg'); */
     height: 100vh;
     width: 100vw;
     background-repeat: no-repeat;

@@ -1,6 +1,19 @@
 let calendar = document.querySelector('.container')
 
 const month_names = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
+// const month_bg= ['seasonal-bg/bkg_01_january.jpg',
+//                 'seasonal-bg/bkg_02_february.jpg',
+//                 'seasonal-bg/bkg_03_march.jpg',
+//                 'seasonal-bg/bkg_04_april.jpg',
+//                 'seasonal-bg/bkg_05_may.jpg',
+//                 'seasonal-bg/bkg_06_june.jpg',
+//                 'seasonal-bg/bkg_07_july.jpg',
+//                 'seasonal-bg/bkg_08_august.jpg',
+//                 'seasonal-bg/bkg_09_september.jpg',
+//                 'seasonal-bg/bkg_10_october.jpg',
+//                 'seasonal-bg/bkg_11_november.jpg',
+//                 'seasonal-bg/bkg_12_december.jpg'
+// ]
 
 isLeapYear = (year) => {
     return (year % 4 === 0 && year % 100 !== 0 && year % 400 !== 0) || (year % 100 === 0 && year % 400 ===0)
@@ -26,9 +39,47 @@ generateCalendar = (month, year) => {
   if (!year) year = currDate.getFullYear()
 
   let curr_month = `${month_names[month]}`
+
   month_picker.innerHTML = curr_month
   calendar_header_year.innerHTML = year
   month_today.innerHTML = curr_month
+
+  let background = document.getElementById('bg')
+  
+  if(curr_month == 'December'){
+    background.style.backgroundImage = "url('seasonal-bg/bkg_12_december.jpg')"
+  }else if(curr_month == 'November'){
+    background.style.backgroundImage = "url('seasonal-bg/bkg_11_november.jpg')"
+  }else if(curr_month == 'October'){
+    background.style.backgroundImage = "url('seasonal-bg/bkg_10_october.jpg')"
+  }else if(curr_month == 'September'){
+    background.style.backgroundImage = "url('seasonal-bg/bkg_09_september.jpg')"
+  }
+  else if(curr_month == 'August'){
+    background.style.backgroundImage = "url('seasonal-bg/bkg_08_august.jpg')"
+  }
+  else if(curr_month == 'July'){
+    background.style.backgroundImage = "url('seasonal-bg/bkg_07_july.jpg')"
+  }
+  else if(curr_month == 'June'){
+    background.style.backgroundImage = "url('seasonal-bg/bkg_06_june.jpg')"
+  }
+  else if(curr_month == 'May'){
+    background.style.backgroundImage = "url('seasonal-bg/bkg_05_may.jpg')"
+  }
+  else if(curr_month == 'April'){
+    background.style.backgroundImage = "url('seasonal-bg/bkg_04_april.jpg')"
+  }
+  else if(curr_month == 'March'){
+    background.style.backgroundImage = "url('seasonal-bg/bkg_03_march.jpg')"
+  }
+  else if(curr_month == 'February'){
+    background.style.backgroundImage = "url('seasonal-bg/bkg_02_february.jpg')"
+  }
+  else if(curr_month == 'January'){
+    background.style.backgroundImage = "url('seasonal-bg/bkg_01_january.jpg')"
+  }
+ 
   // get first day of month
   
   let first_day = new Date(year, month, 1)
@@ -96,3 +147,8 @@ let curr_year = {value: currDate.getFullYear()}
 
 
 generateCalendar(curr_month.value, curr_year.value)
+
+// document.getElementById('next-year').onclick = () => {
+//   ++curr_year.value
+//   generateCalendar(curr_month.value, curr_year.value)
+// }
