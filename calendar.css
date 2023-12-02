@@ -57,7 +57,7 @@ nav p{
 }
 
 nav h1{
-    flex-grow: 5;
+    flex-grow: 3;
     justify-content: end;
     font-size: 500%;    
     margin-top: 50px;
@@ -74,6 +74,7 @@ nav h1{
 .mid-section{
     display: flex;
     align-items: stretch;
+    justify-content: space-evenly;
 }
 
 div li{
@@ -134,6 +135,87 @@ ol li{
 
 .month_calendar{
     text-align: center;
+    display: none;
 }
+
+#myDays{
+    margin-left: 1vw ;
+    padding: 10px;
+}
+
+.calendar-week-day{
+    display: grid;
+    grid-template-columns: repeat(7,1fr);
+    font-weight: 600;
+    height: 100px;
+    width: 500px;
+}
+
+.calendar-week-day div{
+    display: grid;
+    place-items: center;
+    justify-content: space-between;
+    color: rgb(255, 255, 255);
+}
+
+.calendar-days{
+    display: grid;
+    grid-template-columns: repeat(7,1fr);
+    gap: 2px;
+    color: #000000;
+}
+
+.calendar-days div{
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    cursor: pointer;
+}
+
+.month-picker{
+    cursor: pointer;
+}
+
+.month-list {
+    display: flex;
+    background-color: var(--bg-main);
+    padding: 20px;
+    grid-template-columns: repeat(3, auto);
+    gap: 5px;
+    display: grid;
+    transform: scale(1.5);
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.month-list.show {
+    transform: scale(1);
+    visibility: visible;
+    pointer-events: visible;
+    transition: all 0.2s ease-in-out;
+}
+
+.month-list > div {
+    display: grid;
+    place-items: center;
+}
+
+.month-list > div > div {
+    width: 100%;
+    padding: 5px 20px;
+    border-radius: 10px;
+    text-align: center;
+    cursor: pointer;
+    color: var(--color-txt);
+    height: 75px;
+}
+
+.month-list > div > div:hover {
+    background-color: var(--color-hover);
+}
+
 
 }

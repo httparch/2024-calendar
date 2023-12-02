@@ -7,7 +7,7 @@
     <!-- <link rel="stylesheet" href="css/bootstrap.min.css"> -->
     <link rel="stylesheet" href="@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap');">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
-    <title>2024 Calendar</title>
+    <title>Calendar</title>
 </head>
 <body>
 
@@ -18,34 +18,32 @@
         <header class="header">            
             <div>
                 <nav>
-                    <h1>2024</h1> 
+                    <h1 id="year"> <span>asd</span></h1>
                     <p>TODAY</p>
                     <p>|</p>
-                    <p>DECEMBER</p>
-                    <div class="icon">
-                        <p id="next" class="material-symbols-rounded">chevron_right</p>
-                    </div> 
+                    <p class="month-picker" id="month-picker"></p>
                 </nav>
             </div>
     
         </header>
 
         <div class="mid-section">
-            <div class="month_calendar">
-                <ul class="months">
-                        <li>JAN</li>
-                        <li>FEB</li>
-                        <li>MAR</li>
-                        <li>APR</li>
-                        <li>MAY</li>
-                        <li>JUN</li>
-                        <li>JUL</li>
-                        <li>AUG</li>
-                        <li>SEP</li>
-                        <li>OCT</li>
-                        <li>NOV</li>
-                        <li>DEC</li>
-                </ul>
+            <div class="month_calendar" id="myMonth" >
+                <div class="month-list"></div>
+          </div>
+          
+          <div id="myDays">
+                <div class="calendar-week-day">
+                    <div>Sun</div>
+                    <div>Mon</div>
+                    <div>Tue</div>
+                    <div>Wed</div>
+                    <div>Thu</div>
+                    <div>Fri</div>
+                    <div>Sat</div>
+                </div>
+                <div class="calendar-days"></div>
+                
           </div>
 
           <div class="right">
@@ -60,7 +58,7 @@
                             </div>
                             <div class="month">
                                 
-                                <p class="current-month">DECEMBER</p>
+                                <p class="current-month"></p>
                                 <p class="current-time">10:30PM</p>
                             </div>
                         </div>
@@ -76,10 +74,11 @@
                 </div>
             </div>
 
-
+            
         </div>
          
     </div>
 </div> 
+    <script src="index.js"></script>
 </body>
 </html>
