@@ -164,7 +164,7 @@ ol li{
     display: grid;
     grid-template-columns: repeat(7,1fr);
     font-weight: 600;
-    height: 100px;
+    height: 50px;
     width: 500px;
     
 }
@@ -201,7 +201,7 @@ ol li{
     border-radius: 10%;
 }
 
-.month-picker{
+.month-picker,  #click_today{
     cursor: pointer;
 }
 
@@ -243,8 +243,43 @@ ol li{
     background-color: rgba(128, 0, 0, 0.192);
 }
 
-.month-picker:hover{
+.month-picker:hover,  #click_today:hover, #harang:hover{
     color: #000000;
+}
+.calendar-days div:hover{
+    background: white;
+    color: #000000;
+    /* transition-delay: 1s; */
+}
+
+#prev:hover, #next:hover{
+    color: #ffffff;
+}
+
+#daycolor0:hover{
+    color: red;
+}
+#daycolor1:hover{
+    color: rgb(255, 166, 0);
+}
+#daycolor2:hover{
+    color: rgb(238, 255, 0);
+}
+#daycolor3:hover{
+    color: rgb(0, 255, 60);
+}
+#daycolor4:hover{
+    color: rgb(8, 0, 255);
+}
+#daycolor5:hover{
+    color: rgb(179, 0, 255);
+}
+#daycolor6:hover{
+    color: rgb(255, 0, 200);
+}
+
+.month .current-time{
+   letter-spacing: 5px;
 }
 
 }

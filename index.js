@@ -46,8 +46,20 @@ generateCalendar = (month, year) => {
   month_picker.innerHTML = curr_month
   calendar_header_year.innerHTML = year
   month_today.innerHTML = month_names[currDate.getMonth()]
-  time_today.innerHTML = currDate.toLocaleTimeString()
+
+  setInterval(() =>{
+    let d = new Date()
+    time_today.innerHTML = d.toLocaleTimeString()
+  },1000)
+
   day_today.innerHTML = day
+
+  // let compare_month = currDate.getMonth()
+  // var z = document.getElementById('click_today')
+
+  // if(month_today == month_names[compare_month]){
+  //     z.textContent = "Go back"
+  // }
 
   let background = document.getElementById('bg')
   
@@ -86,6 +98,9 @@ generateCalendar = (month, year) => {
   }
  
   // get first day of month
+
+
+  
   
   let first_day = new Date(year, month, 1)
 
@@ -93,10 +108,6 @@ generateCalendar = (month, year) => {
       let day = document.createElement('div')
       if (i >= first_day.getDay()) {
           day.innerHTML = i - first_day.getDay() + 1
-          // day.innerHTML += `<span></span>
-          //                 <span></span>
-          //                 <span></span>
-          //                 <span></span>`
           if (i - first_day.getDay() + 1 === currDate.getDate() && year === currDate.getFullYear() && month === currDate.getMonth()) {
               day.classList.add('curr-date')
           }
@@ -104,6 +115,8 @@ generateCalendar = (month, year) => {
       calendar_days.appendChild(day)
   }
 }
+
+
 
 let month_list = calendar.querySelector('.month-list')
 
@@ -118,7 +131,6 @@ month_names.forEach((e, index) => {
         x.style.display = "block";
       } else {
         x.style.display = "none"; 
-       
       } 
       y.style.display = "none";
       month_list.classList.remove('show')
