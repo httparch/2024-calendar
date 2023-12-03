@@ -1,3 +1,4 @@
+
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap');
 
 @media only screen and (min-width: 1300px) {
@@ -29,7 +30,8 @@
 }
 
 .background{
-    /* background-image: url('seasonal-bg/bkg_09_september.jpg'); */
+    /* 
+     */
     height: 100vh;
     width: 100vw;
     background-repeat: no-repeat;
@@ -56,13 +58,28 @@ nav p{
     color: #ffffff;
 }
 
-nav h1{
+.head{
+    display: flex;
+    flex-direction: row;
+}
+
+.head span{
+    padding-top: 100px;
+    font-size: 50px;
+    cursor: pointer;
+}
+
+nav div{
     flex-grow: 3;
+    margin-left: 30px ;
+}
+
+nav h1{
     justify-content: end;
     font-size: 500%;    
     margin-top: 50px;
-    margin-left: 30px;
-    padding-left: 30px;
+    /* margin-left: 30px;
+    padding-left: 30px; */
     padding-top: 20px;
 }
 
@@ -149,6 +166,7 @@ ol li{
     font-weight: 600;
     height: 100px;
     width: 500px;
+    
 }
 
 .calendar-week-day div{
@@ -173,6 +191,14 @@ ol li{
     justify-content: center;
     position: relative;
     cursor: pointer;
+    padding-left: 5.5px;
+    font-weight: 600;
+}
+
+.calendar-days div.curr-date {
+    background-color: rgb(255, 0, 0);
+    color: #ffffff;
+    border-radius: 10%;
 }
 
 .month-picker{
@@ -209,13 +235,16 @@ ol li{
     border-radius: 10px;
     text-align: center;
     cursor: pointer;
-    color: var(--color-txt);
+    color: rgb(0, 0, 0);
     height: 75px;
 }
 
 .month-list > div > div:hover {
-    background-color: var(--color-hover);
+    background-color: rgba(128, 0, 0, 0.192);
 }
 
+.month-picker:hover{
+    color: #000000;
+}
 
 }

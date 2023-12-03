@@ -28,8 +28,10 @@ generateCalendar = (month, year) => {
   let calendar_days = calendar.querySelector('.calendar-days')
   let calendar_header_year = calendar.querySelector('h1')
   let month_today = calendar.querySelector('.current-month')
-
-
+  let day_today = calendar.querySelector('.current-day')
+  let time_today = calendar.querySelector('.current-time')
+  
+ 
   let days_of_month = [31, getFebDays(year), 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
 
   calendar_days.innerHTML = ''
@@ -37,12 +39,15 @@ generateCalendar = (month, year) => {
   let currDate = new Date()
   if(month ===null || month === undefined) month = currDate.getMonth()
   if (!year) year = currDate.getFullYear()
+  const day = String(currDate.getDate()).padStart(2,'0');
 
   let curr_month = `${month_names[month]}`
 
   month_picker.innerHTML = curr_month
   calendar_header_year.innerHTML = year
-  month_today.innerHTML = curr_month
+  month_today.innerHTML = month_names[currDate.getMonth()]
+  time_today.innerHTML = currDate.toLocaleTimeString()
+  day_today.innerHTML = day
 
   let background = document.getElementById('bg')
   
@@ -88,10 +93,10 @@ generateCalendar = (month, year) => {
       let day = document.createElement('div')
       if (i >= first_day.getDay()) {
           day.innerHTML = i - first_day.getDay() + 1
-          day.innerHTML += `<span></span>
-                          <span></span>
-                          <span></span>
-                          <span></span>`
+          // day.innerHTML += `<span></span>
+          //                 <span></span>
+          //                 <span></span>
+          //                 <span></span>`
           if (i - first_day.getDay() + 1 === currDate.getDate() && year === currDate.getFullYear() && month === currDate.getMonth()) {
               day.classList.add('curr-date')
           }
@@ -148,7 +153,19 @@ let curr_year = {value: currDate.getFullYear()}
 
 generateCalendar(curr_month.value, curr_year.value)
 
-// document.getElementById('next-year').onclick = () => {
-//   ++curr_year.value
-//   generateCalendar(curr_month.value, curr_year.value)
+document.getElementById('next').onclick = () => {
+  ++curr_year.value
+  generateCalendar(curr_month.value, curr_year.value)
+}
+
+document.getElementById('prev').onclick = () => {
+  --curr_year.value
+  generateCalendar(curr_month.value, curr_year.value)
+}
+
+// const clickToday = calendar.getElementById('click_today');
+// const refresh = () => {
+//     location.reload()
 // }
+
+// clickToday.addEventListener('click', refresh )
