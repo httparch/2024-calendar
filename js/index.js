@@ -1,7 +1,8 @@
-
+let clickToday = document.getElementById('click_today')
 let calendar = document.querySelector('.container')
 
 const month_names = ['JANUARY', 'FEBRUARY', 'MARCH', 'APRIL', 'MAY', 'JUNE', 'JULY', 'AUGUST', 'SEPTEMBER', 'OCTOBER', 'NOVEMBER', 'DECEMBER']
+const day_names = ['SUNDAY','MONDAY','TUESDAY','WEDNESDAY','THURSDAY','FRIDAY','SATURDAY']
 
 isLeapYear = (year) => {
     return (year % 4 === 0 && year % 100 !== 0 && year % 400 !== 0) || (year % 100 === 0 && year % 400 ===0)
@@ -42,7 +43,13 @@ generateCalendar = (month, year) => {
 
   day_today.innerHTML = day
 
-  changeWeather(currDate.toLocaleTimeString())
+  
+
+  var toDay = day_names[currDate.getDay()]
+  
+  clickToday.textContent = toDay
+
+  // changeWeather(currDate.toLocaleTimeString())
   changeBg(curr_month)
 
   // get first day of month
@@ -59,22 +66,6 @@ generateCalendar = (month, year) => {
       calendar_days.appendChild(day)
   }
 
-// const toggle = document.getElementById('toggleDark');
-// const body = document.querySelector('body');
-// let background = document.getElementById('bg')
-
-// toggle.addEventListener('click', function(){
-//     this.classList.toggle('bi-moon');
-//     if(this.classList.toggle('bi-brightness-high-fill')){
-//         changeBg(curr_month)
-//         body.style.color = 'black';
-//         body.style.transition = '2s';
-//     }else{
-//         background.style.backgroundImage = "url('seasonal-bg/depositphotos_132368254-stock-illustration-starry-night-sky-sunset-dawn.jpg')"
-//         body.style.color = 'white';
-//         body.style.transition = '2s';
-//     }
-// });
 }
 
 let month_list = calendar.querySelector('.month-list')
@@ -91,8 +82,8 @@ month_names.forEach((e, index) => {
         y.style.display = "none";
       } else {
         x.style.display = "none"; 
-      } 
-      
+      }
+            
       month_list.classList.remove('show')
       curr_month.value = index
       generateCalendar(index, curr_year.value)

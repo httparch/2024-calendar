@@ -30,8 +30,6 @@
 }
 
 .background{
-    /* 
-     */
     height: 100vh;
     width: 100vw;
     background-repeat: no-repeat;
@@ -78,8 +76,6 @@ nav h1{
     justify-content: end;
     font-size: 500%;    
     margin-top: 50px;
-    /* margin-left: 30px;
-    padding-left: 30px; */
     padding-top: 20px;
 }
 
@@ -183,14 +179,13 @@ ol li{
     font-weight: 600;
     height: 50px;
     width: 500px;
-    
 }
 
 .calendar-week-day div{
     display: grid;
     place-items: center;
     justify-content: space-between;
-    color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
 }
 
 .calendar-days{
@@ -217,15 +212,21 @@ ol li{
     color: #ffffff;
     border-radius: 10%;
 }
-
-.month-picker,  #click_today{
-
-    cursor: pointer;
+#click_today ,#harang{
+    color: red;
 }
+
+.month-picker{
+    cursor: pointer;
+    color: #000000;
+}
+
+/* .month-picker:hover{
+    background-color: ;
+} */
 
 .month-list {
     display: flex;
-    /* background-color: var(--bg-main); */
     padding: 20px;
     grid-template-columns: repeat(3, auto);
     gap: 5px;
@@ -269,7 +270,7 @@ ol li{
 }
 
 .month-picker:hover,  #click_today:hover, #harang:hover{
-    color: #000000;
+    color: #ffffff;
 }
 .calendar-days div:hover{
     background: white;
@@ -283,6 +284,7 @@ ol li{
 
 #daycolor0:hover{
     color: red;
+    
 }
 #daycolor1:hover{
     color: rgb(255, 166, 0);
@@ -311,9 +313,9 @@ ol li{
   margin-right: 25px;
   
 }
-/* i{
-    font-size: 30px;
+i{
+    font-size:30px;
     cursor: pointer;
     transform: translate(-50%, -50%);
-} */
+}
 }
