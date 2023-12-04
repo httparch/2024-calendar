@@ -8,7 +8,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Inter';
-    letter-spacing: 7.50px;
+    letter-spacing: 7.00px;
     word-wrap: break-word;
 }
 
@@ -141,9 +141,26 @@ img{
     margin-left: 40px ;
 }
 
-.todo p{
+#title-quote{
+    font-weight: 600;
+}
+
+#quote{
+    font-style: oblique;
+    letter-spacing: 3px;
+}
+
+#author{
+    letter-spacing: 2px;
+    font-weight: 600;
+}
+
+.quote p{
     margin-top: 30px;
-    padding-left: 30px;
+    padding-left: 20px;
+    overflow-wrap: break-word;  
+    word-wrap: break-word; 
+    word-break: break-word;
 }
 
 ol li{
@@ -202,12 +219,13 @@ ol li{
 }
 
 .month-picker,  #click_today{
+
     cursor: pointer;
 }
 
 .month-list {
     display: flex;
-    background-color: var(--bg-main);
+    /* background-color: var(--bg-main); */
     padding: 20px;
     grid-template-columns: repeat(3, auto);
     gap: 5px;
@@ -239,8 +257,15 @@ ol li{
     height: 75px;
 }
 
+.month-list.show{
+    padding-top: 30px;
+}
+
 .month-list > div > div:hover {
-    background-color: rgba(128, 0, 0, 0.192);
+    background-color: rgba(0, 0, 0, 0.192);
+    font-weight: 600;
+    color: white;
+    height: 40px;
 }
 
 .month-picker:hover,  #click_today:hover, #harang:hover{
@@ -249,7 +274,7 @@ ol li{
 .calendar-days div:hover{
     background: white;
     color: #000000;
-    /* transition-delay: 1s; */
+
 }
 
 #prev:hover, #next:hover{
@@ -282,4 +307,13 @@ ol li{
    letter-spacing: 5px;
 }
 
+.current-weather{
+  margin-right: 25px;
+  
+}
+/* i{
+    font-size: 30px;
+    cursor: pointer;
+    transform: translate(-50%, -50%);
+} */
 }

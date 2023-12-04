@@ -1,19 +1,7 @@
+
 let calendar = document.querySelector('.container')
 
-const month_names = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
-// const month_bg= ['seasonal-bg/bkg_01_january.jpg',
-//                 'seasonal-bg/bkg_02_february.jpg',
-//                 'seasonal-bg/bkg_03_march.jpg',
-//                 'seasonal-bg/bkg_04_april.jpg',
-//                 'seasonal-bg/bkg_05_may.jpg',
-//                 'seasonal-bg/bkg_06_june.jpg',
-//                 'seasonal-bg/bkg_07_july.jpg',
-//                 'seasonal-bg/bkg_08_august.jpg',
-//                 'seasonal-bg/bkg_09_september.jpg',
-//                 'seasonal-bg/bkg_10_october.jpg',
-//                 'seasonal-bg/bkg_11_november.jpg',
-//                 'seasonal-bg/bkg_12_december.jpg'
-// ]
+const month_names = ['JANUARY', 'FEBRUARY', 'MARCH', 'APRIL', 'MAY', 'JUNE', 'JULY', 'AUGUST', 'SEPTEMBER', 'OCTOBER', 'NOVEMBER', 'DECEMBER']
 
 isLeapYear = (year) => {
     return (year % 4 === 0 && year % 100 !== 0 && year % 400 !== 0) || (year % 100 === 0 && year % 400 ===0)
@@ -54,54 +42,10 @@ generateCalendar = (month, year) => {
 
   day_today.innerHTML = day
 
-  // let compare_month = currDate.getMonth()
-  // var z = document.getElementById('click_today')
+  changeWeather(currDate.toLocaleTimeString())
+  changeBg(curr_month)
 
-  // if(month_today == month_names[compare_month]){
-  //     z.textContent = "Go back"
-  // }
-
-  let background = document.getElementById('bg')
-  
-  if(curr_month == 'December'){
-    background.style.backgroundImage = "url('seasonal-bg/bkg_12_december.jpg')"
-  }else if(curr_month == 'November'){
-    background.style.backgroundImage = "url('seasonal-bg/bkg_11_november.jpg')"
-  }else if(curr_month == 'October'){
-    background.style.backgroundImage = "url('seasonal-bg/bkg_10_october.jpg')"
-  }else if(curr_month == 'September'){
-    background.style.backgroundImage = "url('seasonal-bg/bkg_09_september.jpg')"
-  }
-  else if(curr_month == 'August'){
-    background.style.backgroundImage = "url('seasonal-bg/bkg_08_august.jpg')"
-  }
-  else if(curr_month == 'July'){
-    background.style.backgroundImage = "url('seasonal-bg/bkg_07_july.jpg')"
-  }
-  else if(curr_month == 'June'){
-    background.style.backgroundImage = "url('seasonal-bg/bkg_06_june.jpg')"
-  }
-  else if(curr_month == 'May'){
-    background.style.backgroundImage = "url('seasonal-bg/bkg_05_may.jpg')"
-  }
-  else if(curr_month == 'April'){
-    background.style.backgroundImage = "url('seasonal-bg/bkg_04_april.jpg')"
-  }
-  else if(curr_month == 'March'){
-    background.style.backgroundImage = "url('seasonal-bg/bkg_03_march.jpg')"
-  }
-  else if(curr_month == 'February'){
-    background.style.backgroundImage = "url('seasonal-bg/bkg_02_february.jpg')"
-  }
-  else if(curr_month == 'January'){
-    background.style.backgroundImage = "url('seasonal-bg/bkg_01_january.jpg')"
-  }
- 
   // get first day of month
-
-
-  
-  
   let first_day = new Date(year, month, 1)
 
   for (let i = 0; i <= days_of_month[month] + first_day.getDay() - 1; i++) {
@@ -114,9 +58,24 @@ generateCalendar = (month, year) => {
       }
       calendar_days.appendChild(day)
   }
+
+// const toggle = document.getElementById('toggleDark');
+// const body = document.querySelector('body');
+// let background = document.getElementById('bg')
+
+// toggle.addEventListener('click', function(){
+//     this.classList.toggle('bi-moon');
+//     if(this.classList.toggle('bi-brightness-high-fill')){
+//         changeBg(curr_month)
+//         body.style.color = 'black';
+//         body.style.transition = '2s';
+//     }else{
+//         background.style.backgroundImage = "url('seasonal-bg/depositphotos_132368254-stock-illustration-starry-night-sky-sunset-dawn.jpg')"
+//         body.style.color = 'white';
+//         body.style.transition = '2s';
+//     }
+// });
 }
-
-
 
 let month_list = calendar.querySelector('.month-list')
 
@@ -129,10 +88,11 @@ month_names.forEach((e, index) => {
     var y = document.getElementById('myMonth')
       if (x.style.display === "none") {
         x.style.display = "block";
+        y.style.display = "none";
       } else {
         x.style.display = "none"; 
       } 
-      y.style.display = "none";
+      
       month_list.classList.remove('show')
       curr_month.value = index
       generateCalendar(index, curr_year.value)
@@ -149,7 +109,7 @@ month_picker.onclick = () => {
   var y = document.getElementById('myMonth')
 
     if (x.style.display === "none" && y.style.display === "block") {
-      x.style.display = "block";
+      x.style.display = "none";
     }
     else {
       x.style.display = "none";
@@ -175,9 +135,3 @@ document.getElementById('prev').onclick = () => {
   generateCalendar(curr_month.value, curr_year.value)
 }
 
-// const clickToday = calendar.getElementById('click_today');
-// const refresh = () => {
-//     location.reload()
-// }
-
-// clickToday.addEventListener('click', refresh )
