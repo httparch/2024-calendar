@@ -282,29 +282,6 @@ ol li{
     color: #ffffff;
 }
 
-#daycolor0:hover{
-    color: red;
-    
-}
-#daycolor1:hover{
-    color: rgb(255, 166, 0);
-}
-#daycolor2:hover{
-    color: rgb(238, 255, 0);
-}
-#daycolor3:hover{
-    color: rgb(0, 255, 60);
-}
-#daycolor4:hover{
-    color: rgb(8, 0, 255);
-}
-#daycolor5:hover{
-    color: rgb(179, 0, 255);
-}
-#daycolor6:hover{
-    color: rgb(255, 0, 200);
-}
-
 .month .current-time{
    letter-spacing: 5px;
 }
