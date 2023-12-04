@@ -47,18 +47,20 @@ function changeBg(curr_month){
   
 }
   var currentTime = new Date().getHours();
-
+  console.log(currentTime)
   if ( currentTime > 7 && currentTime< 16) { //morning
     document.getElementById('weather').src = 'weather-pix/sunny-removebg-preview.png'
   }
-  else if (currentTime >= 18 &&currentTime < 25) { //night
+  else if (currentTime > 18) { //night
     document.getElementById('weather').src = 'weather-pix/night-removebg-preview.png'
   }
   else if (currentTime > 5 &&currentTime < 7) { //sunrise
     document.getElementById('weather').src = 'weather-pix/sunrise-removebg-preview.png'
   }
-  else { //sunset
+  else if (currentTime > 16 && currentTime <= 18){ //sunset
     document.getElementById('weather').src = 'weather-pix/sunset-removebg-preview.png'
+  }else{
+    document.getElementById('weather').src = 'weather-pix/night-removebg-preview.png'
   }
 
   function sun(){
