@@ -42,9 +42,6 @@ generateCalendar = (month, year) => {
   },1000)
 
   day_today.innerHTML = day
-
-  
-
   var toDay = day_names[currDate.getDay()]
   
   clickToday.textContent = toDay
@@ -74,7 +71,7 @@ month_names.forEach((e, index) => {
   let month = document.createElement('div')
   month.innerHTML = `<div data-month="${index}">${e}</div>`
   month.querySelector('div').onclick = () => {
-
+    sun()
     var x = document.getElementById('myDays')
     var y = document.getElementById('myMonth')
       if (x.style.display === "none") {
@@ -95,7 +92,7 @@ let month_picker = calendar.querySelector('.month-picker')
 
 month_picker.onclick = () => {
   month_list.classList.add('show')
-
+  
   var x = document.getElementById('myDays')
   var y = document.getElementById('myMonth')
 
@@ -106,10 +103,9 @@ month_picker.onclick = () => {
       x.style.display = "none";
       y.style.display = "block";
     }
-}
+} 
 
 let currDate = new Date()
-
 let curr_month = {value: currDate.getMonth()}
 let curr_year = {value: currDate.getFullYear()}
 
@@ -117,11 +113,13 @@ let curr_year = {value: currDate.getFullYear()}
 generateCalendar(curr_month.value, curr_year.value)
 
 document.getElementById('next').onclick = () => {
+  sun()
   ++curr_year.value
   generateCalendar(curr_month.value, curr_year.value)
 }
 
 document.getElementById('prev').onclick = () => {
+  sun()
   --curr_year.value
   generateCalendar(curr_month.value, curr_year.value)
 }

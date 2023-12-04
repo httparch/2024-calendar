@@ -6,6 +6,7 @@ let Thu = document.getElementById('daycolor4')
 let Fri = document.getElementById('daycolor5')
 let Sat = document.getElementById('daycolor6')
 let toggle = document.getElementById('toggleDark');
+let btn_toggle = document.getElementById('time-icon');
 let body = document.querySelector('body')
 let header = document.getElementById('year')
 let monthToday = document.getElementById('month-picker')
@@ -24,6 +25,8 @@ function white(){
     Fri.style.color = 'white'
     Fri.style.transition = '1s'
     Sat.style.color = 'white'
+    toggle.style.color = 'white'
+    toggle.style.transition = '1s'
     Sat.style.transition = '1s'
     header.style.color = 'white';
     body.style.color = 'white';
@@ -48,10 +51,13 @@ function black(){
     Fri.style.transition = '1s'
     Sat.style.color = 'black'
     Sat.style.transition = '1s'
+    toggle.style.color = 'black'
+    toggle.style.transition = '1s'
     body.style.color = 'black';
     header.style.color = 'black';
     header.style.transition = '1s';
     body.style.transition = '1s';
     monthToday.style.color = 'black';
     monthToday.style.transition = '1s';
+  
 }
