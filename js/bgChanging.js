@@ -73,7 +73,7 @@ btn_toggle.onclick = () => {
   else if (currentTime > 5 &&currentTime < 7) { //sunrise
     document.getElementById('weather').src = 'weather-pix/sunrise-removebg-preview.png'
   }
-  else if (currentTime > 16 && currentTime <= 18){ //sunset
+  else if (currentTime > 16 && currentTime < 18){ //sunset
     document.getElementById('weather').src = 'weather-pix/sunset-removebg-preview.png'
   }else{
     document.getElementById('weather').src = 'weather-pix/night-removebg-preview.png'
