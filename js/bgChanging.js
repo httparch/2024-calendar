@@ -2,7 +2,6 @@ let background = document.getElementById('bg')
 
 function changeBg(curr_month){
 
-    // sun()
     let current = curr_month
     
       if(current == 'DECEMBER'){
@@ -30,24 +29,7 @@ function changeBg(curr_month){
       }else if(current == 'JANUARY'){
         background.style.backgroundImage = "url('seasonal-bg/bkg_01_january.jpg')"
       }
-
-  // toggle.addEventListener('click', function(){
-  //   this.classList.toggle('bi-moon')
-  //   console.log(this);
-  //     if(this.classList.toggle('bi-brightness-high-fill')){
-  //         black()
-          
-  //         changeBg(curr_month)
-  //     }else{
-  //         background.style.backgroundImage = "url('seasonal-bg/depositphotos_132368254-stock-illustration-starry-night-sky-sunset-dawn.jpg')"
-  //         background.style.transition = '2s';
-  //         white()
-  //     }
-  //     console.log(curr_month);
-   
-  // });
-
-  
+ 
 btn_toggle.onclick = () => {
   toggle.classList.toggle('bi-moon')
       if(toggle.classList.toggle('bi-brightness-high-fill')){

@@ -46,7 +46,6 @@ generateCalendar = (month, year) => {
   
   clickToday.textContent = toDay
 
-  // changeWeather(currDate.toLocaleTimeString())
   changeBg(curr_month)
 
   // get first day of month
