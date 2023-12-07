@@ -46,7 +46,7 @@ btn_toggle.onclick = () => {
 }
   var currentTime = new Date().getHours();
   console.log(currentTime)
-  if ( currentTime > 7 && currentTime< 16) { //morning
+  if ( currentTime >= 7 && currentTime< 16) { //morning
     document.getElementById('weather').src = 'weather-pix/sunny-removebg-preview.png'
   }
   else if (currentTime > 18) { //night
